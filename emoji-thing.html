@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Thing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="form-container">
+            <div>
+                <label for="amount">Emojis</label>
+                <input type="number" name="amount" id="amount" min="0" value="10">
+            </div>
+            <button class="myButton" onClick="displayBall()">Add</button>
+            <button class="myButton" onClick="toggleMoreOptions()">More Options</button>
+            <div id="more-options">
+                <div id="select-group">
+                    <label for="selectEmoji">Type</label>
+                    <select name="selectEmoji" id="selectEmoji">
+                        <option value=0 selected>All</option>
+                        <option value=1>👌</option>
+                        <option value=2>🤣</option>
+                        <option value=3>😜</option>
+                        <option value=4>😈</option>
+                        <option value=5>💀</option>
+                        <option value=6>🤑</option>
+                        <option value=7>🥰</option>
+                        <option value=8>👽</option>
+                        <option value=9>👀</option>
+                        <option value=10>💯</option>
+                        <option value=11>😂</option>
+                        <option value=12>😎</option>
+                    </select>
+                </div>
+                <div id="check-group">
+                    <label for="checkRave">Rave?</label>
+                    <input type="checkbox" name="checkRave" id="checkRave" onClick="toggleRave()">
+                </div>
+                <button class="myButton" onClick="resetView()">Reset</button>
+              </div>
+        </div>
+        <div id="set-container">
+        </div>
+    </div>
+    <script src="emoji-thing.js"></script>
+</body>
+</html>
