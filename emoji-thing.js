@@ -1,4 +1,16 @@
-const emojis = ['👌','🤣','😜','😈','💀','🤑','🥰','👽','👀','💯','😂','😎'];
+const EMOJI_OPTIONS = ['👌','😜','😈','💀','🤑','🥰','👽','👀','💯','😂','😎','✨','😭','🙏','💖','👍'];
+
+window.onload=function(){
+    let selectElement = document.querySelector('#selectEmoji');
+    EMOJI_OPTIONS.forEach(function (value, i) {
+        console.log(i);
+        var opt = document.createElement("option");
+        opt.value= i+1;
+        opt.innerHTML = value;
+        selectElement.appendChild(opt);
+        
+    });
+}
 
 function displayBall(){
     var amount = document.getElementById('amount').value;
@@ -13,7 +25,7 @@ function displayBall(){
             ball.textContent = randomEmoji();
         }
         else{
-            ball.textContent = emojis[selectedEmoji-1];
+            ball.textContent = EMOJI_OPTIONS[selectedEmoji-1];
         }
         ball.style.animationDelay = `${Math.random()}s`;
         ball.style.backgroundColor = randomColor();
@@ -42,7 +54,9 @@ function toggleMoreOptions(){
 }
 
 function resetView(){
-    document.getElementById("checkRave").click();
+    if(document.getElementById('checkRave').checked){
+        document.getElementById("checkRave").click();
+    }
     document.getElementById('selectEmoji').value = 0;
     var setContainer = document.getElementById('set-container');
     while (setContainer.lastElementChild) {
@@ -58,8 +72,8 @@ function randomColor(){
 
 function randomEmoji(){
     const MIN = 0;
-    const MAX = emojis.length-1;
+    const MAX = EMOJI_OPTIONS.length-1;
     var random = Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
-    return emojis[random];
+    return EMOJI_OPTIONS[random];
 }
 
